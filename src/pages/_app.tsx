@@ -5,6 +5,8 @@ import "swiper/css";
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { AuthProvider } from "@/components/AuthProvider";
+import { RouteGuard } from "@/components/RouteGuard";
 
 const queryClient = new QueryClient({
   defaultOptions: {

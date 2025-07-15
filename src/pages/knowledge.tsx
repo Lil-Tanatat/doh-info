@@ -40,7 +40,7 @@ export default function KnowledgePage() {
 
   return (
     <Layout>
-      <div className="space-y-16 px-6 py-10 md:px-12 lg:px-24">
+      <div className="space-y-16 px-6 py-4 md:px-12 lg:px-24">
         {/* Hero Section */}
         <section className="relative h-[100px] sm:h-[150px] md:h-[400px] overflow-hidden rounded-bl-4xl rounded-br-4xl">
           <div
@@ -63,14 +63,10 @@ export default function KnowledgePage() {
                   setSelectedCategory(e.target.value);
                   setCurrentPage(1);
                 }}
-                defaultValue=""
+                defaultValue="latest"
               >
-                <option value="" disabled>
-                  เลือกปี
-                </option>
-                <option value="2025">ปี 2025</option>
-                <option value="2024">ปี 2024</option>
-                <option value="2023">ปี 2023</option>
+                <option value="latest">ล่าสุด</option>
+                <option value="oldest">เก่าสุด</option>
               </select>
               <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black">
                 <IconChevronDown size={18} />

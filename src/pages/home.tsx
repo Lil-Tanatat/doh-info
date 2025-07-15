@@ -44,7 +44,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <div className="space-y-16 px-6 py-10 md:px-12 lg:px-24">
+      <div className="space-y-16 px-6 py-4 md:px-12 lg:px-24">
         {/* Hero Section */}
         <section className="relative z-10 h-[350px] sm:h-[450px] md:h-[500px] overflow-hidden rounded-bl-4xl rounded-br-4xl">
           <Swiper

@@ -34,16 +34,22 @@ const NAV_LINKS = [
 
 const AUTH_LINKS = [{ title: "รายชื่อผู้ใช้งาน", href: "/user/list" }];
 
-// const LANGUAGES = [
-//   { code: "TH", name: "ไทย", flag: "/images/th-flag.png", isActive: true },
-//   { code: "EN", name: "English", flag: "/images/en-flag.png", isActive: false },
-// ];
+const LANGUAGES = [
+  { code: "TH", name: "ไทย", flag: "/images/th-flag.png", isActive: true },
+  { code: "EN", name: "English", flag: "/images/en-flag.png", isActive: false },
+];
 
 // Font size options
 const FONT_SIZES = [
-  { size: 16, label: "A", className: "text-sm" },
-  { size: 18, label: "A", className: "text-md" },
-  { size: 20, label: "A", className: "text-lg" },
+  { size: 16, label: "ก", className: "text-sm" },
+  { size: 18, label: "ก", className: "text-md" },
+  { size: 20, label: "ก", className: "text-lg" },
+];
+
+const THEMES = [
+  { key: "light", label: "ก", color: "text-black" },
+  { key: "dark", label: "ก", color: "text-white" },
+  { key: "system", label: "ก", color: "text-yellow-400" },
 ];
 
 // Pages where login button should be visible
@@ -92,6 +98,20 @@ export function Navbar() {
     null
   );
   const [isAnimating, setIsAnimating] = useState(false);
+  const handleLanguageChange = (code: string) => {
+    console.log("Change language to:", code);
+  };
+  const [themeMode, setThemeMode] = useState<"light" | "dark" | "system">(
+    "system"
+  );
+  const VerticalDivider = () => (
+    <span className="text-lg text-black select-none">|</span>
+  );
+
+  const handleThemeChange = (mode: "light" | "dark" | "system") => {
+    setThemeMode(mode);
+    console.log(`Theme changed to: ${mode}`);
+  };
 
   // Auth hooks
   const { data: profile } = useProfile();
@@ -204,14 +224,14 @@ export function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="sticky top-0 z-[9999] bg-[#FFF2DA] backdrop-blur-md transition-all duration-300">
-      <div className="max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-[9999] bg-[#FFF2DA] backdrop-blur-md transition-all duration-300 pt-4">
+      <div className="w-[85%] max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-26">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/home" className="flex-shrink-0">
               <Image
-                src="/images/logo.png"
+                src="/images/New Logo.png"
                 alt="logo"
                 width={50}
                 height={50}
@@ -225,7 +245,10 @@ export function Navbar() {
             <div className="flex items-center space-x-4 gap-2">
               {/* Search */}
               <IconSearch className="w-5 h-5 cursor-pointer hover:text-highlight" />
-
+              <VerticalDivider />
+              {/* <button onClick={toggleDarkMode} className="hover:text-highlight">
+                {isDarkMode ? <IconSun size={18} /> : <IconMoon size={18} />}
+              </button> */}
               {/* Font size */}
               <div className="flex items-baseline gap-2 font-bold h-auto">
                 {FONT_SIZES.map((fontOption, index) => (
@@ -244,9 +267,56 @@ export function Navbar() {
                   </div>
                 ))}
               </div>
-
+              <VerticalDivider />
+              {/* Theme Toggle */}
+              <div className="flex items-center gap-2 h-auto">
+                {THEMES.map((theme, index) => (
+                  <div
+                    key={index}
+                    className={`
+        w-6 h-6 flex items-center border-2 border-black justify-center rounded-full cursor-pointer transition-all duration-200
+        ${themeMode === theme.key ? "" : "bg-black"}
+        ${theme.color} 
+        ${
+          themeMode === theme.key
+            ? "scale-110 shadow-lg"
+            : "hover:scale-105 hover:opacity-80"
+        }
+      `}
+                    onClick={() =>
+                      handleThemeChange(
+                        theme.key as "light" | "dark" | "system"
+                      )
+                    }
+                  >
+                    <span className="text-lg">{theme.label}</span>
+                  </div>
+                ))}
+              </div>
+              <VerticalDivider />
+              {/* Language Switch */}
+              <div className="flex items-center gap-1 cursor-pointer hover:opacity-80">
+                <Image
+                  src="/images/th-flag.png"
+                  alt="TH"
+                  width={20}
+                  height={14}
+                />
+                <span className="text-sm font-medium">TH</span>
+              </div>
+              <VerticalDivider />
               {/* Desktop Login Buttons */}
-              {LOGIN_BUTTON_PAGES.includes(pathname) && !isAuthenticated && (
+              {!isAuthenticated && (
+                <div className="flex items-center gap-3">
+                  <div className="border-2 border-highlight rounded-xl px-5 py-1 hover:bg-highlight text-[#0F5F4D] hover:text-white transition-colors duration-300">
+                    <Link href="/login">เข้าสู่ระบบ</Link>
+                  </div>
+                  <div className="border-2 border-secondary text-white bg-secondary rounded-xl px-5 py-1 hover:bg-transparent hover:text-secondary transition-colors duration-300">
+                    <Link href="/register">สมัครสมาชิก</Link>
+                  </div>
+                </div>
+              )}
+              {/* {LOGIN_BUTTON_PAGES.includes(pathname) && !isAuthenticated && (
                 <div className="flex items-center gap-3">
                   <div className="border-2 border-highlight rounded-xl px-5 py-1 hover:bg-highlight hover:text-white transition-colors duration-300">
                     <Link href="/login">เข้าสู่ระบบ</Link>
@@ -255,11 +325,11 @@ export function Navbar() {
                     <Link href="/register">สมัครสมาชิก</Link>
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center justify-end space-x-8 font-bold text-md">
+            <div className="flex items-center justify-end space-x-8 font-bold text-sm md:text-base lg:text-md">
               <div className="flex items-center space-x-8">
                 {NAV_LINKS.map((link) =>
                   link.dropdown ? (
@@ -510,6 +580,51 @@ export function Navbar() {
                       </Link>
                     )
                   )}
+                  {/* Language Switch */}
+                  <div className="flex items-center space-x-4">
+                    {LANGUAGES.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-md font-medium transition-colors ${
+                          lang.isActive
+                            ? "bg-highlight text-white"
+                            : "hover:bg-gray-100"
+                        }`}
+                      >
+                        <Image
+                          src={lang.flag}
+                          alt={lang.name}
+                          width={20}
+                          height={14}
+                        />
+                        <span>{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                  {/* Theme Toggle */}
+
+                  <div className="flex items-center gap-4">
+                    {THEMES.map((theme) => (
+                      <button
+                        key={theme.key}
+                        onClick={() =>
+                          handleThemeChange(
+                            theme.key as "light" | "dark" | "system"
+                          )
+                        }
+                        className={`w-8 h-8 rounded-full border-2 border-black flex items-center justify-center cursor-pointer
+          ${themeMode === theme.key ? "" : "bg-black"} ${theme.color} ${
+                          themeMode === theme.key
+                            ? "scale-110 shadow-lg"
+                            : "hover:scale-105 hover:opacity-80"
+                        }
+        `}
+                      >
+                        <span className="text-lg">{theme.label}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Auth Section */}
@@ -570,7 +685,7 @@ export function Navbar() {
                     </div>
                   </div>
                 ) : (
-                  LOGIN_BUTTON_PAGES.includes(pathname) && (
+                  !isAuthenticated && (
                     <div className="border-t px-4 py-6 space-y-3 bg-gray-50/50">
                       <h3 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
                         เข้าสู่ระบบ
