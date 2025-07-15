@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "ศูนย์อนามัย 1",
+    "email": "email@mail.go.th",
+    "phone": "0-2590-4000",
+    "fax": "0-2590-4094",
+    "address": "88/22 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 2,
+    "name": "ศูนย์อนามัย 2",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 3,
+    "name": "ศูนย์อนามัย 3",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 4,
+    "name": "ศูนย์อนามัย 4",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 5,
+    "name": "ศูนย์อนามัย 5",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 6,
+    "name": "ศูนย์อนามัย 6",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 7,
+    "name": "ศูนย์อนามัย 7",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 8,
+    "name": "ศูนย์อนามัย 8",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 9,
+    "name": "ศูนย์อนามัย 9",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 10,
+    "name": "ศูนย์อนามัย 10",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 11,
+    "name": "ศูนย์อนามัย 11",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 12,
+    "name": "ศูนย์อนามัย 12",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  },
+  {
+    "id": 13,
+    "name": "ศูนย์อนามัย 13",
+    "email": "email2@mail.go.th",
+    "phone": "0-2590-4001",
+    "fax": "0-2590-4095",
+    "address": "90 ม.4 ถ.ติวานนท์ ต.ตลาดขวัญ อ.เมือง จ.นนทบุรี 11000",
+    "website": "www.anamai.moph.go.th"
+  }
+]

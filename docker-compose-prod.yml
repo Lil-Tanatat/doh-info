@@ -1,0 +1,26 @@
+name: doh-frontend
+services:
+  # Production service
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PYTHON_API_URL=http://supabase-fastapi:8000
+      - SUPABASE_API_URL=http://doh-supabase-kong:8000
+      - NEXT_PUBLIC_API_END_POINT=https://doh.dev01.softsq.com/api
+    restart: unless-stopped
+    # profiles:
+    #  - prod
+
+
+networks:
+  default:
+    name: doh-network
+volumes:
+  next_build_cache: null

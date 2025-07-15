@@ -1,0 +1,34 @@
+name: doh-frontend
+
+services:
+  # Development service
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - PYTHON_API_URL=http://fastapi:8000
+      - SUPABASE_API_URL=http://kong:8000
+      - NEXT_PUBLIC_API_END_POINT=/api
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+      - FAST_REFRESH=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - next_build_cache:/app/.next
+    command: npm run dev -- -H 0.0.0.0
+    profiles:
+      - dev
+
+networks:
+  default:
+    name: doh-network
+
+volumes:
+  next_build_cache:
